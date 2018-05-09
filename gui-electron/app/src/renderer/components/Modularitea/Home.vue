@@ -7,7 +7,7 @@
       </el-carousel-item>
     </el-carousel>
 
-    <el-col :xs="12" :sm="8" :md="4" v-for="module1 in modules" style="height:580px;">
+    <el-col :xs="12" :sm="8" :md="4" v-for="module1 in modules " style="height:580px;">
       <el-card :body-style="{ padding: '0px', margin:'0' }">
         <img :src="getPic(module1.package.folderName)" class="image">
         <!-- <img src="../../../../../../modules/Student/icon.png" alt=""> -->
