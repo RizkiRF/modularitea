@@ -5,7 +5,7 @@
         "homepage"      : "http://php.net",
         "source": {
             "ubuntu_apt": {
-                "name"  : "php7.0"
+                "name"  : "php"
             }
         },
         "preferred_source"   : "ubuntu_apt",

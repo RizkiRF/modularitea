@@ -76,10 +76,10 @@
       // let rootFolderProject3 = rootFolderProject2.substring(0, rootFolderProject2.lastIndexOf("/"));
       
       // Ketika akan build aktifkan var dibawa ini
-      // const modulesFolderPath ='/usr/share/modularitea-package/modules/';
+      const modulesFolderPath ='/usr/share/modularitea-package/modules/';
       
       // Ketika mode devloper aktifkan var dibawa ini, ganti rizkirf dengan username kalian
-      const modulesFolderPath ='/home/rizkirf/Desktop/modularitea/modules/';
+      // const modulesFolderPath ='/home/rizkirf/Desktop/modularitea/modules/';
       
       fs.readdir(modulesFolderPath, (err, files) => {
         if (err) {

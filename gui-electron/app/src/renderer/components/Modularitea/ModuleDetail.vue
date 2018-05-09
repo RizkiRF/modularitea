@@ -66,7 +66,7 @@
         // try exec
         let self = this
         var exec = require('child_process').exec;
-        let command = "xterm -e /usr/bin/modularitea-cli.py --module=" + this.$route.params.folderName
+        let command = "x-terminal-emulator -e /usr/bin/modularitea-cli.py --module=" + this.$route.params.folderName
         let errorMessage = ''
         exec('gksu "' + command + '"', function(error, stdout, stderr) {
             console.log('stdout: ' + stdout);
@@ -87,7 +87,7 @@
         }).on('exit', code => {
           let message = ''
           switch (true) {
-            case (error == null):
+            case (code == 0) :
               message = 'Selamat kamu berhasil memesang modul ' + this.$route.params.folderName
               self.$alert(message, 'Sukses install modul!', {
                 confirmButtonText: 'OK',
@@ -117,12 +117,12 @@
       // get the root folder of electron project
       
       // Ketika akan build aktifkan var dibawa ini
-      // let moduleFolderPath = '/usr/share/modularitea-package/modules/' + this.$route.params.folderName;
-      // let atomsFolderPath = '/usr/share/modularitea-package/atoms/';
+      let moduleFolderPath = '/usr/share/modularitea-package/modules/' + this.$route.params.folderName;
+      let atomsFolderPath = '/usr/share/modularitea-package/atoms/';
 
       // Ketika mode devloper aktifkan var dibawa ini, ganti rizkirf dengan username kalian
-      let moduleFolderPath = '/home/rizkirf/Desktop/modularitea/modules/' + this.$route.params.folderName;
-      let atomsFolderPath = '/home/rizkirf/Desktop/modularitea/atoms/';
+      // let moduleFolderPath = '/home/rizkirf/Desktop/modularitea/modules/' + this.$route.params.folderName;
+      // let atomsFolderPath = '/home/rizkirf/Desktop/modularitea/atoms/';
 
       var modulePackage = JSON.parse(fs.readFileSync(moduleFolderPath + '/package.json', 'utf8'));
       this.moduleDetail = modulePackage.package
