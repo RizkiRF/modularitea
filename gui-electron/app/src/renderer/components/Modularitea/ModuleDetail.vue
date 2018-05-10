@@ -88,7 +88,7 @@
           let message = ''
           switch (true) {
             case (code == 0) :
-              message = 'Selamat kamu berhasil memesang modul ' + this.$route.params.folderName
+              message = 'Selamat modul ' + this.$route.params.folderName + ' sedang proses installasi silahkan tunggu :)'
               self.$alert(message, 'Sukses install modul!', {
                 confirmButtonText: 'OK',
                 callback: action => {

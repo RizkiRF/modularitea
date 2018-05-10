@@ -198,8 +198,15 @@ class Module:
             print("[*] memasang", atom.get_name())
             file_location = home + ".modularitea/download/" + atom.get_url(ARCH).split('/')[-1]
             command = []
-            if file_location.endswith(".tar.gz") or file_location.endswith(".tar.xz"):
+            if file_location.endswith(".tar.gz"):
                 command = ["/bin/tar", "-xvzf", file_location, "-C", atom.get_archive_install_dir(ARCH)]
+            elif file_location.endswith(".tar.xz"):
+                command = ["/bin/tar", "-xvJf", file_location, "-C", atom.get_archive_install_dir(ARCH)]
+                p = subprocess.call(command)    
+                if ARCH == 32:
+                    command = ["/bin/cp", "-a", "/node-v8.9.3-linux-x86/.", "/"]
+                elif ARCH == 64:
+                    command = ["/bin/cp", "-a", "/node-v8.9.3-linux-x64/.", "/"]
             elif file_location.endswith(".zip"):
                 command = ["/usr/bin/unzip", file_location, "-d", atom.get_archive_install_dir(ARCH)]
             p = subprocess.call(command)
