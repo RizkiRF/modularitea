@@ -15,4 +15,5 @@
         "repositori" :"https://git.blender.org/blender.git",
         "bahasapemrograman" :"C, C++, Phyton",
         "sistemoperasi" :"Windows, MacOs, Linux, FreeBSD"
+    }
 }
